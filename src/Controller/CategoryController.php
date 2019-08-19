@@ -19,7 +19,8 @@ class CategoryController extends AbstractController
      */
     public function index(): Response
     {
-        $categories = $this->getDoctrine()
+
+               $categories = $this->getDoctrine()
             ->getRepository(Category::class)
             ->findAll();
 
