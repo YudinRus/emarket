@@ -62,22 +62,22 @@ class Article
         return $this->id;
     }
 
-    public function getShortTitle(): string
+    public function getShortTitle(): ?string
     {
         return $this->shortTitle;
     }
 
-      public function setShortTitle(string $short_title)
+      public function setShortTitle(string $short_title): self
     {
         $this->shortTitle = $short_title;
     }
 
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    public function setTitle(string $title)
+    public function setTitle(string $title): self
     {
         $this->title = $title;
     }
@@ -87,22 +87,22 @@ class Article
         return $this->date;
     }
 
-    public function getText(): string
+    public function getText(): ?string
     {
         return $this->text;
     }
 
-    public function setText(string $text)
+    public function setText(string $text): self
     {
         $this->text = $text;
     }
 
-    public function getAuthor(): string
+    public function getAuthor(): ?string
     {
         return $this->author;
     }
 
-    public function setAuthor(string $author)
+    public function setAuthor(string $author): self
     {
         $this->author = $author;
     }
@@ -112,7 +112,7 @@ class Article
         return $this->isPublished;
     }
 
-    public function setIsPublished(bool $isPublished)
+    public function setIsPublished(bool $isPublished): self
     {
         $this->isPublished = $isPublished;
     }
