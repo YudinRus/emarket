@@ -22,7 +22,7 @@ class Article
     /**
      * @ORM\Column(type="string")
      */
-    private $short_title;
+    private $shortTitle;
 
     /**
      * @ORM\Column(type="string")
@@ -57,69 +57,65 @@ class Article
     }
 
 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getShortTitle()
+    public function getShortTitle(): string
     {
-        return $this->short_title;
+        return $this->shortTitle;
     }
 
-      public function setShortTitle($short_title): string
+      public function setShortTitle(string $short_title)
     {
-        $this->short_title = $short_title;
+        $this->shortTitle = $short_title;
     }
 
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function setTitle($title): string
+    public function setTitle(string $title)
     {
         $this->title = $title;
     }
 
-      public function getDate()
+      public function getDate(): \DateTimeImmutable
     {
         return $this->date;
     }
 
-    public function setDate($date): \DateTimeImmutable
-    {
-        $this->date = $date;
-    }
-
-    public function getText()
+    public function getText(): string
     {
         return $this->text;
     }
 
-    public function setText($text): string
+    public function setText(string $text)
     {
         $this->text = $text;
     }
 
-    public function getAuthor()
+    public function getAuthor(): string
     {
         return $this->author;
     }
 
-    public function setAuthor($author): string
+    public function setAuthor(string $author)
     {
         $this->author = $author;
     }
 
-    public function getOn()
+    public function getIsPublished(): bool
     {
         return $this->isPublished;
     }
 
-    public function setOn($on): bool
+    public function setIsPublished(bool $isPublished)
     {
-        $this->isPublished = $on;
+        $this->isPublished = $isPublished;
     }
+
 
 }
