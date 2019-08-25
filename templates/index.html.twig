@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ message }}</h1>
+    <a href="{{ path('article_index') }}">
+        <button class="btn btn-warning">
+            Watch all articles
+        </button>
+    </a>
+{% endblock %}

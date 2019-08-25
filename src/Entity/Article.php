@@ -49,7 +49,7 @@ class Article
      */
     private $isPublished;
 
-      public function __construct()
+    public function __construct()
     {
         $this->date = new \DateTimeImmutable();
         $this->author = 'Admin';
@@ -67,9 +67,9 @@ class Article
         return $this->shortTitle;
     }
 
-      public function setShortTitle(string $short_title): self
+    public function setShortTitle(string $shortTitle): void
     {
-        $this->shortTitle = $short_title;
+        $this->shortTitle = $shortTitle;
     }
 
     public function getTitle(): ?string
@@ -77,12 +77,12 @@ class Article
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-      public function getDate(): \DateTimeImmutable
+    public function getDate(): \DateTimeImmutable
     {
         return $this->date;
     }
@@ -92,7 +92,7 @@ class Article
         return $this->text;
     }
 
-    public function setText(string $text): self
+    public function setText(string $text): void
     {
         $this->text = $text;
     }
@@ -102,7 +102,7 @@ class Article
         return $this->author;
     }
 
-    public function setAuthor(string $author): self
+    public function setAuthor(string $author): void
     {
         $this->author = $author;
     }
@@ -112,10 +112,8 @@ class Article
         return $this->isPublished;
     }
 
-    public function setIsPublished(bool $isPublished): self
+    public function setIsPublished(bool $isPublished): void
     {
         $this->isPublished = $isPublished;
     }
-
-
 }
