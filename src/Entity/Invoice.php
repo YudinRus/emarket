@@ -47,9 +47,16 @@ class Invoice
 
     public function __construct()
     {
-        $this->createdAt = new \DateTimeImmutable();
+        $this->createdAt = new \DateTime();
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt(): \DateTime
+    {
+        return $this->createdAt;
+    }
 
     public function getId(): int
     {
@@ -98,10 +105,5 @@ class Invoice
     {
         $this->phoneNumber = $phoneNumber;
         return $this;
-    }
-
-    public function getCreatedAt(): \DateTimeImmutable
-    {
-        return $this->createdAt;
     }
 }

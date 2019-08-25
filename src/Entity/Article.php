@@ -51,7 +51,7 @@ class Article
 
     public function __construct()
     {
-        $this->date = new \DateTimeImmutable();
+        $this->date = new \DateTime();
         $this->author = 'Admin';
         $this->isPublished = false;
     }
@@ -82,7 +82,7 @@ class Article
         $this->title = $title;
     }
 
-    public function getDate(): \DateTimeImmutable
+    public function getDate(): \DateTime
     {
         return $this->date;
     }
@@ -116,4 +116,6 @@ class Article
     {
         $this->isPublished = $isPublished;
     }
+
+
 }

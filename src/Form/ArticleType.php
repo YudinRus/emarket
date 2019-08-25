@@ -14,7 +14,6 @@ class ArticleType extends AbstractType
         $builder
             ->add('short_title')
             ->add('title')
-            ->add('date')
             ->add('text')
             ->add('author')
             ->add('isPublished')
