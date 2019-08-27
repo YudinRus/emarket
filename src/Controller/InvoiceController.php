@@ -10,12 +10,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/invoice")
+ * @Route("/invoice", name="invoice_")
  */
 class InvoiceController extends AbstractController
 {
     /**
-     * @Route("/", name="invoice_index", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index(): Response
     {
@@ -29,7 +29,7 @@ class InvoiceController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="invoice_new", methods={"GET","POST"})
+     * @Route("/new", name="new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -52,7 +52,7 @@ class InvoiceController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="invoice_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      */
     public function show(Invoice $invoice): Response
     {
@@ -62,7 +62,7 @@ class InvoiceController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="invoice_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Invoice $invoice): Response
     {
@@ -82,7 +82,7 @@ class InvoiceController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="invoice_delete", methods={"DELETE"})
+     * @Route("/{id}", name="delete", methods={"DELETE"})
      */
     public function delete(Request $request, Invoice $invoice): Response
     {
