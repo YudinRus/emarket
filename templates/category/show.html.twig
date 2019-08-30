@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category{% endblock %}
+{% block title %}Категория{% endblock %}
 
 {% block body %}
-    <h1>Category</h1>
+    <div class="container-fluid">
+    <h1>Категория</h1>
+    </div>
 
-    <table class="table">
+    <table class="table table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -18,9 +20,15 @@
         </tbody>
     </table>
 
-    <a href="{{ path('category_index') }}">back to list</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-secondary"><a href="{{ path('category_index') }}" style="color: black">back to list</a></button>
+    </div>
 
-    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-secondary"><a href="{{ path('category_edit', {'id': category.id}) }}" style="color: black">edit</a></button>
+    </div>
 
-    {{ include('category/_delete_form.html.twig') }}
+    <div class="container-fluid">
+        {{ include('category/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

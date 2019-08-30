@@ -1,4 +1,29 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="errors">
+    {{ form_errors(form) }}
+</div>
+
+<div class="container">
+    <div class="form-group row"
+        {{ form_label(form.short_title, 'Краткий заголовок', {'label_attr': {'class': 'col-form-label'}}) }}
+        {{ form_widget(form.short_title, {'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group row">
+        {{ form_label(form.title, 'Заголовок', {'label_attr': {'class': 'col-form-label'}}) }}
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group row">
+        {{ form_label(form.text, 'Текст статьи', {'label_attr': {'class': 'col-form-label'}}) }}
+        {{ form_widget(form.text, {'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group row">
+        {{ form_label(form.author, 'Автор статьи', {'label_attr': {'class': 'col-form-label'}}) }}
+        {{ form_widget(form.author, {'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group row">
+        {{ form_widget(form.isPublished) }}
+        {{ form_label(form.isPublished, 'Опубликована ли?', {'label_attr': {'class': 'col-form-label col-lg-10'}}) }}
+    </div>
+</div>
+<button class="btn btn-success">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

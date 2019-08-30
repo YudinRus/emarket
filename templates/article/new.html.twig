@@ -3,9 +3,15 @@
 {% block title %}New Article{% endblock %}
 
 {% block body %}
-    <h1>Create new Article</h1>
+    <div class="container-fluid">
+     <h1>Создание новой статьи</h1>
+    </div>
 
-    {{ include('article/_form.html.twig') }}
+    <div class="container">
+        {{ include('article/_form.html.twig') }}
+    </div>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-secondary"><a href="{{ path('article_index') }}" style="color: black">Back to list</a></button>
+    </div>
 {% endblock %}

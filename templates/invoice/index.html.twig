@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Invoice index{% endblock %}
+{% block title %}Список заказов{% endblock %}
 
 {% block body %}
-    <h1>Invoice index</h1>
+    <h1>Список заказов</h1>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -25,17 +25,17 @@
                 <td>{{ invoice.phoneNumber }}</td>
                 <td>{{ invoice.createdAt ? invoice.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('invoice_show', {'id': invoice.id}) }}">show</a>
-                    <a href="{{ path('invoice_edit', {'id': invoice.id}) }}">edit</a>
+                    <button type="button" class="btn btn-warning"><a href="{{ path('invoice_show', {'id': invoice.id}) }}">Show</a></button>
+                    <button type="button" class="btn btn-warning"><a href="{{ path('invoice_edit', {'id': invoice.id}) }}">Edit</a></button>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Нет записей</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('invoice_new') }}">Create new</a>
+    <button type="button" class="btn btn-primary"><a href="{{ path('invoice_new') }}" style="color: black">Create new</a></button>
 {% endblock %}

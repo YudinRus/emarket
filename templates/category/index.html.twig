@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}Список категорий{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <h1>Список категорий</h1>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,17 +19,18 @@
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
                 <td>
-                    <a href="{{ path('category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+                    <button type="button" class="btn btn-warning"><a href="{{ path('category_show', {'id': category.id}) }}">Show</a></button>
+                    <button type="button" class="btn btn-warning"><a href="{{ path('category_edit', {'id': category.id}) }}">Edit</a></button>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Нет записей</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('category_new') }}">Create new</a>
+    <button type="button" class="btn btn-primary"><a href="{{ path('category_new') }}" style="color: black">Create new</a></button>
+
 {% endblock %}

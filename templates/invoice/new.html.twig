@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Invoice{% endblock %}
+{% block title %}Новый заказ{% endblock %}
 
 {% block body %}
-    <h1>Create new Invoice</h1>
+    <h1>Создание нового заказа</h1>
 
+    <div class="container">
     {{ include('invoice/_form.html.twig') }}
+    </div>
 
-    <a href="{{ path('invoice_index') }}">back to list</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-secondary"><a href="{{ path('invoice_index') }}" style="color: black">back to list</a></button>
+    </div>
 {% endblock %}

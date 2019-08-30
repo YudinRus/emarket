@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Category{% endblock %}
+{% block title %}Новая категория{% endblock %}
 
 {% block body %}
-    <h1>Create new Category</h1>
+    <h1>Создание новой категории</h1>
 
-    {{ include('category/_form.html.twig') }}
+    <div class="container">
+        {{ include('category/_form.html.twig') }}
+    </div>
 
-    <a href="{{ path('category_index') }}">back to list</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-secondary"><a href="{{ path('category_index') }}" style="color: black">back to list</a></button>
+    </div>
 {% endblock %}

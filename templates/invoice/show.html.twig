@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Invoice{% endblock %}
+{% block title %}Заказ{% endblock %}
 
 {% block body %}
-    <h1>Invoice</h1>
+    <h1>Заказ</h1>
 
-    <table class="table">
+    <table class="table table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -30,9 +30,15 @@
         </tbody>
     </table>
 
-    <a href="{{ path('invoice_index') }}">back to list</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-secondary"><a href="{{ path('invoice_index') }}" style="color: black">Back to list</a></button>
+    </div>
 
-    <a href="{{ path('invoice_edit', {'id': invoice.id}) }}">edit</a>
+    <div class="container-fluid">
+    <button type="button" class="btn btn-secondary"><a href="{{ path('invoice_edit', {'id': invoice.id}) }}" style="color: black">Edit</a></button>
+    </div>
 
+    <div class="container-fluid">
     {{ include('invoice/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

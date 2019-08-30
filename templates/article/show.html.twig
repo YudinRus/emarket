@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article{% endblock %}
+{% block title %}Статья{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
+    <div class="container-fluid">
+    <h1>Статья</h1>
+    </div>
 
-    <table class="table">
+    <table class="table table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -38,9 +40,15 @@
         </tbody>
     </table>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-secondary"><a href="{{ path('article_index') }}" style="color: black">Back to list</a></button>
+    </div>
 
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-warning"><a href="{{ path('article_edit', {'id': article.id}) }}" style="color: black">Edit</a></button>
+    </div>
 
-    {{ include('article/_delete_form.html.twig') }}
+    <div class="container-fluid">
+        {{ include('article/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

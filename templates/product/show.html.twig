@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Product{% endblock %}
+{% block title %}Продукт{% endblock %}
 
 {% block body %}
-    <h1>Product</h1>
+    <h1>Продукт</h1>
 
-    <table class="table">
+    <table class="table table-striped">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -30,9 +30,15 @@
         </tbody>
     </table>
 
-    <a href="{{ path('product_index') }}">back to list</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-secondary"><a href="{{ path('product_index') }}" style="color: black">back to list</a></button>
+    </div>
 
-    <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-secondary"><a href="{{ path('product_edit', {'id': product.id}) }}" style="color: black">edit</a></button>
+    </div>
 
+    <div class="container-fluid">
     {{ include('product/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

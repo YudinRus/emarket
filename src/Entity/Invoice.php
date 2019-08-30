@@ -20,7 +20,7 @@ class Invoice
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Product")
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="product")
      */
     private $product;
 
@@ -63,7 +63,7 @@ class Invoice
         return $this->id;
     }
 
-    public function getProduct()
+    public function getProduct(): ?string
     {
         return $this->product;
     }
