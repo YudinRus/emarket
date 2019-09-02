@@ -63,7 +63,7 @@ class Invoice
         return $this->id;
     }
 
-    public function getProduct(): ?string
+    public function getProduct()
     {
         return $this->product;
     }
