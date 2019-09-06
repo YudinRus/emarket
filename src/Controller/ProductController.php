@@ -14,6 +14,21 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProductController extends AbstractController
 {
+
+    /**
+     * @Route("/dbshow", name="dbshow", methods={"GET"})
+     */
+    public function dbshow(): Response
+    {
+        $products = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->findOllOrderByPrice();
+
+        return $this->render('product/index.html.twig', [
+            'products' => $products,
+        ]);
+    }
+
     /**
      * @Route("/", name="index", methods={"GET"})
      */
